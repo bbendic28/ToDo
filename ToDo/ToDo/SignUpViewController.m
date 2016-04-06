@@ -13,4 +13,9 @@
 @end
 
 @implementation SignUpViewController
+
+- (IBAction)signUpBackButton:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
