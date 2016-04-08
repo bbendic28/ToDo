@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73A1CAC06110026D3EF /* LogInViewController.m */; };
 		D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73D1CAC08D60026D3EF /* SignUpViewController.m */; };
+		D677EC671CB7ED2000A5EE0E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D677EC661CB7ED2000A5EE0E /* HomeViewController.m */; };
 		D6AC61231CA967AC006DC51F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61221CA967AC006DC51F /* main.m */; };
 		D6AC61261CA967AC006DC51F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61251CA967AC006DC51F /* AppDelegate.m */; };
 		D6AC61291CA967AC006DC51F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61281CA967AC006DC51F /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		D650E73A1CAC06110026D3EF /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		D650E73C1CAC08D60026D3EF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		D650E73D1CAC08D60026D3EF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		D677EC651CB7ED2000A5EE0E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D677EC661CB7ED2000A5EE0E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D6AC611E1CA967AC006DC51F /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AC61221CA967AC006DC51F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6AC61241CA967AC006DC51F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				D650E73A1CAC06110026D3EF /* LogInViewController.m */,
 				D650E73C1CAC08D60026D3EF /* SignUpViewController.h */,
 				D650E73D1CAC08D60026D3EF /* SignUpViewController.m */,
+				D677EC651CB7ED2000A5EE0E /* HomeViewController.h */,
+				D677EC661CB7ED2000A5EE0E /* HomeViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */,
 				D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */,
 				D6AC61231CA967AC006DC51F /* main.m in Sources */,
+				D677EC671CB7ED2000A5EE0E /* HomeViewController.m in Sources */,
 				D6AC612F1CA967AC006DC51F /* ToDo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
