@@ -7,31 +7,61 @@
 //
 
 #import "HomeViewController.h"
+#import "TaskTableViewCell.h"
+#import "Constants.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+    return 1;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TaskTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.taskTitleLabel.text=[NSString stringWithFormat:@"Red %ld",indexPath.row];
+    
+    switch (indexPath.row) {
+            
+        case COMPLETED_TASK_GROUP:
+            cell.taskGroupView.backgroundColor=kTurquoiseColor;
+            break;
+            
+        case IN_PROGRESS_TASK_GROUP:
+            cell.taskGroupView.backgroundColor=kPurpleColor;
+            break;
+            
+        default:
+            cell.taskGroupView.backgroundColor=kOrangeColor;
+            break;
+    }
+    
+    return cell;
 }
-*/
+
+
+
+
+#pragma mark - UITableViewDataDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 70;
+}
+
 
 @end
+
+//COMPLETED_TASK_GROUP=1,
+//NOT_COMPLETED_TASK_GROUP,
+//IN_PROGRESS_TASK_GROUP

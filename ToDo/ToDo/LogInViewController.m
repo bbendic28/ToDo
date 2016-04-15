@@ -27,11 +27,22 @@
 @implementation LogInViewController
 
 #pragma mark - Private API
+
 - (IBAction)signInButtonTapped:(UIButton *)sender {
+    
     [self.activityIndicatorView startAnimating];
+    
+    sender.enabled=NO;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
+    });
 }
+
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
 }
+
 - (IBAction)forgotPassworButtonTapped:(UIButton *)sender {
 }
 
@@ -120,9 +131,7 @@
                      completion:nil];
 }
 
-
-
--(void)prepareForAnimations{
+- (void)prepareForAnimations{
     
     CGRect footerViewFrame=self.footerViewFrame.frame;
     footerViewFrame.origin.y = self.view.frame.size.width;
