@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D635D95E1CBE7212004C4BCF /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D635D95D1CBE7212004C4BCF /* Pad.storyboard */; };
+		D635D9651CBE74E3004C4BCF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D635D9631CBE74E3004C4BCF /* Interface.storyboard */; };
+		D635D9671CBE74E3004C4BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D635D9661CBE74E3004C4BCF /* Assets.xcassets */; };
+		D635D96E1CBE74E3004C4BCF /* ToDoWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D635D96D1CBE74E3004C4BCF /* ToDoWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D635D9761CBE74E3004C4BCF /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D635D9751CBE74E3004C4BCF /* InterfaceController.m */; };
+		D635D9791CBE74E3004C4BCF /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D635D9781CBE74E3004C4BCF /* ExtensionDelegate.m */; };
+		D635D97C1CBE74E3004C4BCF /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D635D97B1CBE74E3004C4BCF /* NotificationController.m */; };
+		D635D97E1CBE74E3004C4BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D635D97D1CBE74E3004C4BCF /* Assets.xcassets */; };
+		D635D9821CBE74E3004C4BCF /* ToDoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D635D9611CBE74E3004C4BCF /* ToDoWatch.app */; };
 		D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73A1CAC06110026D3EF /* LogInViewController.m */; };
 		D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73D1CAC08D60026D3EF /* SignUpViewController.m */; };
 		D677EC671CB7ED2000A5EE0E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D677EC661CB7ED2000A5EE0E /* HomeViewController.m */; };
@@ -20,7 +29,64 @@
 		D6D61EDB1CB53F26006C5AE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6D61ED91CB53F26006C5AE8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D635D96F1CBE74E3004C4BCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6AC61161CA967AC006DC51F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D635D96C1CBE74E3004C4BCF;
+			remoteInfo = "ToDoWatch Extension";
+		};
+		D635D9801CBE74E3004C4BCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6AC61161CA967AC006DC51F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D635D9601CBE74E3004C4BCF;
+			remoteInfo = ToDoWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D635D9861CBE74E3004C4BCF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D635D96E1CBE74E3004C4BCF /* ToDoWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D635D98A1CBE74E3004C4BCF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D635D9821CBE74E3004C4BCF /* ToDoWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D635D95D1CBE7212004C4BCF /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
+		D635D9611CBE74E3004C4BCF /* ToDoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D635D9641CBE74E3004C4BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D635D9661CBE74E3004C4BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D635D9681CBE74E3004C4BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D635D96D1CBE74E3004C4BCF /* ToDoWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ToDoWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D635D9731CBE74E3004C4BCF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D635D9741CBE74E3004C4BCF /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		D635D9751CBE74E3004C4BCF /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		D635D9771CBE74E3004C4BCF /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		D635D9781CBE74E3004C4BCF /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		D635D97A1CBE74E3004C4BCF /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		D635D97B1CBE74E3004C4BCF /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		D635D97D1CBE74E3004C4BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D635D97F1CBE74E3004C4BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D650E7391CAC06110026D3EF /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		D650E73A1CAC06110026D3EF /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		D650E73C1CAC08D60026D3EF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -42,6 +108,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D635D96A1CBE74E3004C4BCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6AC611B1CA967AC006DC51F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +126,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D635D9621CBE74E3004C4BCF /* ToDoWatch */ = {
+			isa = PBXGroup;
+			children = (
+				D635D9631CBE74E3004C4BCF /* Interface.storyboard */,
+				D635D9661CBE74E3004C4BCF /* Assets.xcassets */,
+				D635D9681CBE74E3004C4BCF /* Info.plist */,
+			);
+			path = ToDoWatch;
+			sourceTree = "<group>";
+		};
+		D635D9711CBE74E3004C4BCF /* ToDoWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D635D9741CBE74E3004C4BCF /* InterfaceController.h */,
+				D635D9751CBE74E3004C4BCF /* InterfaceController.m */,
+				D635D9771CBE74E3004C4BCF /* ExtensionDelegate.h */,
+				D635D9781CBE74E3004C4BCF /* ExtensionDelegate.m */,
+				D635D97A1CBE74E3004C4BCF /* NotificationController.h */,
+				D635D97B1CBE74E3004C4BCF /* NotificationController.m */,
+				D635D97D1CBE74E3004C4BCF /* Assets.xcassets */,
+				D635D97F1CBE74E3004C4BCF /* Info.plist */,
+				D635D9721CBE74E3004C4BCF /* Supporting Files */,
+			);
+			path = "ToDoWatch Extension";
+			sourceTree = "<group>";
+		};
+		D635D9721CBE74E3004C4BCF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D635D9731CBE74E3004C4BCF /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D6AC61151CA967AC006DC51F = {
 			isa = PBXGroup;
 			children = (
+				D635D95D1CBE7212004C4BCF /* Pad.storyboard */,
 				D6AC61201CA967AC006DC51F /* ToDo */,
+				D635D9621CBE74E3004C4BCF /* ToDoWatch */,
+				D635D9711CBE74E3004C4BCF /* ToDoWatch Extension */,
 				D6AC613F1CA96C60006DC51F /* Frameworks */,
 				D6AC611F1CA967AC006DC51F /* Products */,
 			);
@@ -66,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				D6AC611E1CA967AC006DC51F /* ToDo.app */,
+				D635D9611CBE74E3004C4BCF /* ToDoWatch.app */,
+				D635D96D1CBE74E3004C4BCF /* ToDoWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +256,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D635D9601CBE74E3004C4BCF /* ToDoWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D635D9871CBE74E3004C4BCF /* Build configuration list for PBXNativeTarget "ToDoWatch" */;
+			buildPhases = (
+				D635D95F1CBE74E3004C4BCF /* Resources */,
+				D635D9861CBE74E3004C4BCF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D635D9701CBE74E3004C4BCF /* PBXTargetDependency */,
+			);
+			name = ToDoWatch;
+			productName = ToDoWatch;
+			productReference = D635D9611CBE74E3004C4BCF /* ToDoWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D635D96C1CBE74E3004C4BCF /* ToDoWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D635D9831CBE74E3004C4BCF /* Build configuration list for PBXNativeTarget "ToDoWatch Extension" */;
+			buildPhases = (
+				D635D9691CBE74E3004C4BCF /* Sources */,
+				D635D96A1CBE74E3004C4BCF /* Frameworks */,
+				D635D96B1CBE74E3004C4BCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ToDoWatch Extension";
+			productName = "ToDoWatch Extension";
+			productReference = D635D96D1CBE74E3004C4BCF /* ToDoWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		D6AC611D1CA967AC006DC51F /* ToDo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6AC61381CA967AC006DC51F /* Build configuration list for PBXNativeTarget "ToDo" */;
@@ -151,10 +297,12 @@
 				D6AC611A1CA967AC006DC51F /* Sources */,
 				D6AC611B1CA967AC006DC51F /* Frameworks */,
 				D6AC611C1CA967AC006DC51F /* Resources */,
+				D635D98A1CBE74E3004C4BCF /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D635D9811CBE74E3004C4BCF /* PBXTargetDependency */,
 			);
 			name = ToDo;
 			productName = ToDo;
@@ -170,6 +318,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Cubes School 2";
 				TargetAttributes = {
+					D635D9601CBE74E3004C4BCF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D635D96C1CBE74E3004C4BCF = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					D6AC611D1CA967AC006DC51F = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -189,17 +343,37 @@
 			projectRoot = "";
 			targets = (
 				D6AC611D1CA967AC006DC51F /* ToDo */,
+				D635D9601CBE74E3004C4BCF /* ToDoWatch */,
+				D635D96C1CBE74E3004C4BCF /* ToDoWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D635D95F1CBE74E3004C4BCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D635D9671CBE74E3004C4BCF /* Assets.xcassets in Resources */,
+				D635D9651CBE74E3004C4BCF /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D635D96B1CBE74E3004C4BCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D635D97E1CBE74E3004C4BCF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6AC611C1CA967AC006DC51F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D6D61EDB1CB53F26006C5AE8 /* Main.storyboard in Resources */,
 				D6AC61341CA967AC006DC51F /* LaunchScreen.storyboard in Resources */,
+				D635D95E1CBE7212004C4BCF /* Pad.storyboard in Resources */,
 				D6AC61311CA967AC006DC51F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +381,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D635D9691CBE74E3004C4BCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D635D9791CBE74E3004C4BCF /* ExtensionDelegate.m in Sources */,
+				D635D9761CBE74E3004C4BCF /* InterfaceController.m in Sources */,
+				D635D97C1CBE74E3004C4BCF /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D6AC611A1CA967AC006DC51F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,7 +407,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D635D9701CBE74E3004C4BCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D635D96C1CBE74E3004C4BCF /* ToDoWatch Extension */;
+			targetProxy = D635D96F1CBE74E3004C4BCF /* PBXContainerItemProxy */;
+		};
+		D635D9811CBE74E3004C4BCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D635D9601CBE74E3004C4BCF /* ToDoWatch */;
+			targetProxy = D635D9801CBE74E3004C4BCF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		D635D9631CBE74E3004C4BCF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D635D9641CBE74E3004C4BCF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		D6AC61321CA967AC006DC51F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -243,6 +448,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D635D9841CBE74E3004C4BCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "ToDoWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		D635D9851CBE74E3004C4BCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "ToDoWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		D635D9881CBE74E3004C4BCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				IBSC_MODULE = ToDoWatch_Extension;
+				INFOPLIST_FILE = ToDoWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		D635D9891CBE74E3004C4BCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				IBSC_MODULE = ToDoWatch_Extension;
+				INFOPLIST_FILE = ToDoWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		D6AC61361CA967AC006DC51F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -332,6 +599,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -344,12 +612,29 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D635D9831CBE74E3004C4BCF /* Build configuration list for PBXNativeTarget "ToDoWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D635D9841CBE74E3004C4BCF /* Debug */,
+				D635D9851CBE74E3004C4BCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D635D9871CBE74E3004C4BCF /* Build configuration list for PBXNativeTarget "ToDoWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D635D9881CBE74E3004C4BCF /* Debug */,
+				D635D9891CBE74E3004C4BCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D6AC61191CA967AC006DC51F /* Build configuration list for PBXProject "ToDo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
