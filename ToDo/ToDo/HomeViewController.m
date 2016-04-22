@@ -30,6 +30,26 @@
     
     self.profileImageView.clipsToBounds=YES;
     self.profileImageView.layer.cornerRadius=self.profileImageView.frame.size.width/2;
+    
+    
+    //set profile image if nsdata exists in nsuserdefaults
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
+        
+        //nsdata was previously stored in nsuserdefaults when user selected an image
+        NSData *data=[[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE];
+        
+        self.profileImageView.image=[[UIImage alloc] initWithData:data];
+    }
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:WALK_THROUGH_PRESENTED]) {
+        [self performSegueWithIdentifier:@"WalkThroughSegue" sender:nil];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -149,6 +169,13 @@
     }
     
     self.profileImageView.image=image;
+    
+    //convert uiimage to nsdata
+    NSData *nsData=UIImagePNGRepresentation(image);
+    
+    //store nsdata to nsuserdefaults
+    [[NSUserDefaults standardUserDefaults] setObject:nsData forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     
     //after picking image,close imagePickerController

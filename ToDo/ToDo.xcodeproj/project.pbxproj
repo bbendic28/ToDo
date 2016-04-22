@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6074F8C1CCA52600046EC2C /* WalkViewController.m */; };
 		D635D95E1CBE7212004C4BCF /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D635D95D1CBE7212004C4BCF /* Pad.storyboard */; };
 		D635D9651CBE74E3004C4BCF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D635D9631CBE74E3004C4BCF /* Interface.storyboard */; };
 		D635D9671CBE74E3004C4BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D635D9661CBE74E3004C4BCF /* Assets.xcassets */; };
@@ -73,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D6074F8B1CCA52600046EC2C /* WalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkViewController.h; sourceTree = "<group>"; };
+		D6074F8C1CCA52600046EC2C /* WalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkViewController.m; sourceTree = "<group>"; };
 		D635D95D1CBE7212004C4BCF /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
 		D635D9611CBE74E3004C4BCF /* ToDoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D635D9641CBE74E3004C4BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				D677EC661CB7ED2000A5EE0E /* HomeViewController.m */,
 				D63AF21F1CC1178900E23A0A /* TaskTableViewCell.h */,
 				D63AF2201CC1178900E23A0A /* TaskTableViewCell.m */,
+				D6074F8B1CCA52600046EC2C /* WalkViewController.h */,
+				D6074F8C1CCA52600046EC2C /* WalkViewController.m */,
 				D63AF2221CC1184200E23A0A /* Constants.h */,
 			);
 			name = Controllers;
@@ -406,6 +411,7 @@
 				D6AC61261CA967AC006DC51F /* AppDelegate.m in Sources */,
 				D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */,
 				D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */,
+				D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */,
 				D63AF2211CC1178900E23A0A /* TaskTableViewCell.m in Sources */,
 				D6AC61231CA967AC006DC51F /* main.m in Sources */,
 				D677EC671CB7ED2000A5EE0E /* HomeViewController.m in Sources */,

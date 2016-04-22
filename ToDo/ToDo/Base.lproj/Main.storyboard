@@ -57,7 +57,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DMz-2j-Rob"/>
-                                    <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P6v-sK-jUW"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="D67-KL-XNc">
@@ -342,11 +341,40 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="profileImageView" destination="QOr-vH-w5Q" id="lIE-Pf-yLn"/>
+                        <segue destination="35R-4Z-IIH" kind="push" identifier="WalkThroughSegue" id="3hw-3c-RRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dei-pS-LfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940.5" y="909.5"/>
+        </scene>
+        <!--Walk View Controller-->
+        <scene sceneID="qHe-vT-IBx">
+            <objects>
+                <viewController storyboardIdentifier="WalkViewController" id="35R-4Z-IIH" customClass="WalkViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XkC-rZ-MVJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CXv-aY-ldk">
+                                <rect key="frame" x="0.0" y="604" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.094117647060000004" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="35R-4Z-IIH" eventType="touchUpInside" id="ZE7-2i-ucI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ocA-LO-YJ9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jDV-s8-ygI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522.5" y="909.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7WD-j8-fk9">
