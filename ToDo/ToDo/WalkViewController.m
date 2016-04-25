@@ -8,6 +8,16 @@
 
 #import "WalkViewController.h"
 #import "Constants.h"
+#import "WalkThroughItem.h"
+#import "WalkThroughCollectionViewCell.h"
+
+@interface WalkViewController() <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (weak,nonatomic) IBOutlet UICollectionView *collectioView;
+@property (weak,nonatomic) IBOutlet UIButton *closeButton;
+@property (weak,nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong,nonatomic) NSArray *itemsArray;
+
+@end
 
 @implementation WalkViewController
 
@@ -17,6 +27,59 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    
+    self.itemsArray= @[
+                       
+                       [[WalkThroughItem alloc] initWithText:@"Keep your work organized and\nquickly check your reminders\nwith simple calendar" andImage:[UIImage imageNamed:@"calendar"]],
+                       [[WalkThroughItem alloc] initWithText:@"Manage your tasks quick and easy\nfrom your phone" andImage:[UIImage imageNamed:@"phone"]],
+                       [[WalkThroughItem alloc] initWithText:@"Quckly add tasks\nfrom home screen." andImage:[UIImage imageNamed:@"tasks"]]
+                       
+                       ];
+    
+    self.pageControl.numberOfPages=self.itemsArray.count;
+}
+
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    return self.itemsArray.count;
+}
+
+- (UICollectionViewCell *)collectionView: (UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    
+    WalkThroughCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    WalkThroughItem *item=[self.itemsArray objectAtIndex:indexPath.item];
+    cell.walkThroughItem=item;
+    
+    self.pageControl.currentPage=indexPath.row;
+    
+    
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [collectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    
+    return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height);
 }
 
 @end
