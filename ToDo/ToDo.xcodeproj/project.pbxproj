@@ -23,6 +23,8 @@
 		D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73A1CAC06110026D3EF /* LogInViewController.m */; };
 		D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73D1CAC08D60026D3EF /* SignUpViewController.m */; };
 		D677EC671CB7ED2000A5EE0E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D677EC661CB7ED2000A5EE0E /* HomeViewController.m */; };
+		D689E0E41CDA1EF30032CFDB /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D689E0E31CDA1EF30032CFDB /* StatisticsViewController.m */; };
+		D689E0E71CDA2DC80032CFDB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D689E0E61CDA2DC80032CFDB /* WebViewController.m */; };
 		D6AC61231CA967AC006DC51F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61221CA967AC006DC51F /* main.m */; };
 		D6AC61261CA967AC006DC51F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61251CA967AC006DC51F /* AppDelegate.m */; };
 		D6AC61291CA967AC006DC51F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61281CA967AC006DC51F /* ViewController.m */; };
@@ -106,6 +108,11 @@
 		D650E73D1CAC08D60026D3EF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		D677EC651CB7ED2000A5EE0E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D677EC661CB7ED2000A5EE0E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D689E0E21CDA1EF30032CFDB /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		D689E0E31CDA1EF30032CFDB /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		D689E0E51CDA2DC80032CFDB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		D689E0E61CDA2DC80032CFDB /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D689E0E81CDA35230032CFDB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D6AC611E1CA967AC006DC51F /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AC61221CA967AC006DC51F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6AC61241CA967AC006DC51F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,6 +220,7 @@
 				D6AC61301CA967AC006DC51F /* Assets.xcassets */,
 				D6AC61351CA967AC006DC51F /* Info.plist */,
 				D6AC61221CA967AC006DC51F /* main.m */,
+				D689E0E81CDA35230032CFDB /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,6 +261,10 @@
 				D62529AC1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m */,
 				D62529AE1CCE438900678CC9 /* WalkThroughItem.h */,
 				D62529AF1CCE438900678CC9 /* WalkThroughItem.m */,
+				D689E0E21CDA1EF30032CFDB /* StatisticsViewController.h */,
+				D689E0E31CDA1EF30032CFDB /* StatisticsViewController.m */,
+				D689E0E51CDA2DC80032CFDB /* WebViewController.h */,
+				D689E0E61CDA2DC80032CFDB /* WebViewController.m */,
 				D63AF2221CC1184200E23A0A /* Constants.h */,
 			);
 			name = Controllers;
@@ -420,8 +432,10 @@
 				D6AC61291CA967AC006DC51F /* ViewController.m in Sources */,
 				D6AC61261CA967AC006DC51F /* AppDelegate.m in Sources */,
 				D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */,
+				D689E0E41CDA1EF30032CFDB /* StatisticsViewController.m in Sources */,
 				D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */,
 				D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */,
+				D689E0E71CDA2DC80032CFDB /* WebViewController.m in Sources */,
 				D63AF2211CC1178900E23A0A /* TaskTableViewCell.m in Sources */,
 				D6AC61231CA967AC006DC51F /* main.m in Sources */,
 				D62529B01CCE438900678CC9 /* WalkThroughItem.m in Sources */,
@@ -621,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
@@ -634,6 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;

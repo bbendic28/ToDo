@@ -28,5 +28,8 @@ typedef NS_ENUM(NSInteger, TaskGroup){
 static NSString *const USER_IMAGE = @"USER_IMAGE";
 static NSString *const WALK_THROUGH_PRESENTED=@"WALK_THROUGH_PRESENTED";
 
+//String & numbers
+#define ZERO_VALUE                      0.0
+
 #endif /* Constants_h */
 
