@@ -31,5 +31,8 @@ static NSString *const WALK_THROUGH_PRESENTED=@"WALK_THROUGH_PRESENTED";
 //String & numbers
 #define ZERO_VALUE                      0.0
 
+//Notifications
+static NSString *const CITY_CHANGED = @"CITY_CHANGED";
+
 #endif /* Constants_h */
 
