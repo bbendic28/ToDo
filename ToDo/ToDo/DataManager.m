@@ -102,16 +102,36 @@
 }
 
 -(void)deleteObjectInDatabase:(NSManagedObject *)object{
-    
+    [self.managedObjectContext deleteObject:object];
+    [self saveToDataBase];
 }
+
+
 -(void)updateObject:(NSManagedObject *)object{
-    
+    NSError *error = nil;
+    if ([object.managedObjectContext hasChanges] && ![object.managedObjectContext save:&error]) {
+        NSLog(@"Error updating object in database: %@, %@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
 }
+
 -(void)logObject:(NSManagedObject *)object{
+    NSEntityDescription *description= [object entity];
+    NSDictionary *attributes= [description attributesByName];
     
+    for (NSString *attribute in attributes) {
+        NSLog(@"%@ = %@", attribute, [object valueForKey:attribute]);
+    }
 }
+
+
 -(CGFloat)numberOfTasksPerTaskGroup:(TaskGroup)group{
-    return 0.0;
+    
+    NSArray *tasksArray = [self fetchEntity:NSStringFromClass([Task class])
+                                 withFilter:[NSString stringWithFormat:@"group = %ld", group]
+                                withSortAsc:NO
+                                     forKey:nil];
+    return tasksArray.count;
     
 }
 
@@ -119,6 +139,30 @@
              description:(NSString *)description
                    group:(NSInteger)group{
     
+    Task *task= (Task *)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Task class]) inManagedObjectContext:self.managedObjectContext];
+    
+    task.heading=title;
+    task.desc=description;
+    
+    if (self.userLocation) {
+        task.latitude=[NSNumber numberWithFloat:self.userLocation.coordinate.latitude];
+        task.longitude=[NSNumber numberWithFloat:self.userLocation.coordinate.longitude];
+    }
+    
+    task.date=[NSDate date];
+    task.group = [NSNumber numberWithInteger:group];
+    
+    [self saveToDataBase];
+}
+
+#pragma mark - Private API
+
+- (void)saveToDataBase{
+    NSError *error = nil;
+    if ([self.managedObjectContext hasChanges] && ![self.managedObjectContext save:&error]) {
+        NSLog(@"Unresolved error %@, %@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
 }
 
 @end
