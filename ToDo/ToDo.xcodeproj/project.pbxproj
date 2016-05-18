@@ -10,6 +10,8 @@
 		D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6074F8C1CCA52600046EC2C /* WalkViewController.m */; };
 		D62529AD1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62529AC1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m */; };
 		D62529B01CCE438900678CC9 /* WalkThroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D62529AF1CCE438900678CC9 /* WalkThroughItem.m */; };
+		D62932DA1CEC87FD0063C669 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62932D91CEC87FD0063C669 /* MenuView.m */; };
+		D62932DC1CEC88550063C669 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62932DB1CEC88550063C669 /* MenuView.xib */; };
 		D635D95E1CBE7212004C4BCF /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D635D95D1CBE7212004C4BCF /* Pad.storyboard */; };
 		D635D9651CBE74E3004C4BCF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D635D9631CBE74E3004C4BCF /* Interface.storyboard */; };
 		D635D9671CBE74E3004C4BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D635D9661CBE74E3004C4BCF /* Assets.xcassets */; };
@@ -89,6 +91,9 @@
 		D62529AC1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkThroughCollectionViewCell.m; sourceTree = "<group>"; };
 		D62529AE1CCE438900678CC9 /* WalkThroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkThroughItem.h; sourceTree = "<group>"; };
 		D62529AF1CCE438900678CC9 /* WalkThroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkThroughItem.m; sourceTree = "<group>"; };
+		D62932D81CEC87FD0063C669 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		D62932D91CEC87FD0063C669 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		D62932DB1CEC88550063C669 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		D635D95D1CBE7212004C4BCF /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
 		D635D9611CBE74E3004C4BCF /* ToDoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D635D9641CBE74E3004C4BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -291,6 +296,9 @@
 		D6AC613E1CA96C3F006DC51F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D62932D81CEC87FD0063C669 /* MenuView.h */,
+				D62932D91CEC87FD0063C669 /* MenuView.m */,
+				D62932DB1CEC88550063C669 /* MenuView.xib */,
 				D6D9E1CD1CE35A2900074E1C /* Utilities */,
 				D6AC613C1CA96BF2006DC51F /* Models */,
 				D6D61ED91CB53F26006C5AE8 /* Main.storyboard */,
@@ -438,6 +446,7 @@
 			files = (
 				D6D61EDB1CB53F26006C5AE8 /* Main.storyboard in Resources */,
 				D6AC61341CA967AC006DC51F /* LaunchScreen.storyboard in Resources */,
+				D62932DC1CEC88550063C669 /* MenuView.xib in Resources */,
 				D635D95E1CBE7212004C4BCF /* Pad.storyboard in Resources */,
 				D6AC61311CA967AC006DC51F /* Assets.xcassets in Resources */,
 			);
@@ -465,6 +474,7 @@
 				D6D9E1CA1CE3575300074E1C /* Task+CoreDataProperties.m in Sources */,
 				D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */,
 				D689E0E41CDA1EF30032CFDB /* StatisticsViewController.m in Sources */,
+				D62932DA1CEC87FD0063C669 /* MenuView.m in Sources */,
 				D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */,
 				D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */,
 				D689E0E71CDA2DC80032CFDB /* WebViewController.m in Sources */,

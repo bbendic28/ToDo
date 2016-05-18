@@ -334,12 +334,18 @@
                                     <outlet property="delegate" destination="c7U-8u-cZt" id="ASJ-K1-xWS"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" id="Tbi-No-NuS" customClass="MenuView">
+                                <rect key="frame" x="205" y="437" width="170" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZPz-OG-VSj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="menuView" destination="Tbi-No-NuS" id="tjT-Hx-Uwa"/>
                         <outlet property="profileImageView" destination="QOr-vH-w5Q" id="lIE-Pf-yLn"/>
                         <segue destination="35R-4Z-IIH" kind="push" identifier="WalkThroughSegue" id="3hw-3c-RRj"/>
                         <segue destination="jMY-W7-gxg" kind="push" identifier="StatisticsSegue" id="9za-dR-xSQ"/>
