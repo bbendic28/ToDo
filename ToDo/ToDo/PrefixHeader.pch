@@ -12,5 +12,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "UIViewController+Utilities.h"
 
 #endif /* PrefixHeader_pch */

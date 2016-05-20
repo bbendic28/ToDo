@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, MenuOption){
     
-    TASK_DETAILS_MENU_PTION=1,
+    TASK_DETAILS_MENU_OPTION=1,
     ABOUT_MENU_OPTION,
     STATISTICS_MENU_OPTION,
     WALKTHROUGH_MENU_OPTION
@@ -27,5 +27,5 @@ typedef NS_ENUM(NSInteger, MenuOption){
 
 
 @interface MenuView : UIView
-@property (weak,nonatomic) id<MenuViewDelegate> delegate;
+@property (weak,nonatomic) IBOutlet id<MenuViewDelegate> delegate;
 @end

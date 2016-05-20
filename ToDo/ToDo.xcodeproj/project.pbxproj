@@ -25,6 +25,8 @@
 		D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73A1CAC06110026D3EF /* LogInViewController.m */; };
 		D650E73E1CAC08D60026D3EF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D650E73D1CAC08D60026D3EF /* SignUpViewController.m */; };
 		D677EC671CB7ED2000A5EE0E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D677EC661CB7ED2000A5EE0E /* HomeViewController.m */; };
+		D67ABE681CEF2B5A002A7941 /* TaskDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67ABE671CEF2B5A002A7941 /* TaskDetailsViewController.m */; };
+		D67ABE6B1CEF3F34002A7941 /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D67ABE6A1CEF3F34002A7941 /* UIViewController+Utilities.m */; };
 		D689E0E41CDA1EF30032CFDB /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D689E0E31CDA1EF30032CFDB /* StatisticsViewController.m */; };
 		D689E0E71CDA2DC80032CFDB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D689E0E61CDA2DC80032CFDB /* WebViewController.m */; };
 		D6AC61231CA967AC006DC51F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC61221CA967AC006DC51F /* main.m */; };
@@ -94,7 +96,7 @@
 		D62932D81CEC87FD0063C669 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		D62932D91CEC87FD0063C669 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		D62932DB1CEC88550063C669 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
-		D635D95D1CBE7212004C4BCF /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
+		D635D95D1CBE7212004C4BCF /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Pad.storyboard; path = ../Pad.storyboard; sourceTree = "<group>"; };
 		D635D9611CBE74E3004C4BCF /* ToDoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D635D9641CBE74E3004C4BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D635D9661CBE74E3004C4BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +120,10 @@
 		D650E73D1CAC08D60026D3EF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		D677EC651CB7ED2000A5EE0E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D677EC661CB7ED2000A5EE0E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D67ABE661CEF2B5A002A7941 /* TaskDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailsViewController.h; sourceTree = "<group>"; };
+		D67ABE671CEF2B5A002A7941 /* TaskDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsViewController.m; sourceTree = "<group>"; };
+		D67ABE691CEF3F34002A7941 /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		D67ABE6A1CEF3F34002A7941 /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		D689E0E21CDA1EF30032CFDB /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
 		D689E0E31CDA1EF30032CFDB /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
 		D689E0E51CDA2DC80032CFDB /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -203,7 +209,6 @@
 		D6AC61151CA967AC006DC51F = {
 			isa = PBXGroup;
 			children = (
-				D635D95D1CBE7212004C4BCF /* Pad.storyboard */,
 				D6AC61201CA967AC006DC51F /* ToDo */,
 				D635D9621CBE74E3004C4BCF /* ToDoWatch */,
 				D635D9711CBE74E3004C4BCF /* ToDoWatch Extension */,
@@ -288,6 +293,10 @@
 				D689E0E31CDA1EF30032CFDB /* StatisticsViewController.m */,
 				D689E0E51CDA2DC80032CFDB /* WebViewController.h */,
 				D689E0E61CDA2DC80032CFDB /* WebViewController.m */,
+				D67ABE661CEF2B5A002A7941 /* TaskDetailsViewController.h */,
+				D67ABE671CEF2B5A002A7941 /* TaskDetailsViewController.m */,
+				D67ABE691CEF3F34002A7941 /* UIViewController+Utilities.h */,
+				D67ABE6A1CEF3F34002A7941 /* UIViewController+Utilities.m */,
 				D63AF2221CC1184200E23A0A /* Constants.h */,
 			);
 			name = Controllers;
@@ -302,6 +311,7 @@
 				D6D9E1CD1CE35A2900074E1C /* Utilities */,
 				D6AC613C1CA96BF2006DC51F /* Models */,
 				D6D61ED91CB53F26006C5AE8 /* Main.storyboard */,
+				D635D95D1CBE7212004C4BCF /* Pad.storyboard */,
 				D6AC61321CA967AC006DC51F /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -477,6 +487,8 @@
 				D62932DA1CEC87FD0063C669 /* MenuView.m in Sources */,
 				D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */,
 				D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */,
+				D67ABE6B1CEF3F34002A7941 /* UIViewController+Utilities.m in Sources */,
+				D67ABE681CEF2B5A002A7941 /* TaskDetailsViewController.m in Sources */,
 				D689E0E71CDA2DC80032CFDB /* WebViewController.m in Sources */,
 				D63AF2211CC1178900E23A0A /* TaskTableViewCell.m in Sources */,
 				D6AC61231CA967AC006DC51F /* main.m in Sources */,
