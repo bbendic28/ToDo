@@ -7,13 +7,44 @@
 //
 
 #import "AppDelegate.h"
+#import "DataManager.h"
+#import <CoreLocation/CoreLocation.h>
 
+//dodajemo
+@interface AppDelegate() <CLLocationManagerDelegate>
+@property(strong,nonatomic) CLLocationManager *locationManager;
+@end
 
 @implementation AppDelegate
 
+#pragma mark - Private API
+//dodajemo
+-(void)configureLocationManager{
+    self.locationManager=[[CLLocationManager alloc] init];
+    self.locationManager.delegate=self;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startMonitoringSignificantLocationChanges];
+}
 
+
+#pragma mark - UIAplicationDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //dodajemo
+    [self configureLocationManager];
     return YES;
+}
+
+#pragma mark - UCLLocationManagerDelegate
+//dodajemo sve ovo didUpdateLocations i didFailWithError
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations{
+    if (locations.count>0) {
+        [DataManager sharedInstance].userLocation=[locations firstObject];
+    }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error{
+    NSLog(@"Location manager error: %@",[error localizedDescription]);
 }
 
 

@@ -13,5 +13,6 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 #import "UIViewController+Utilities.h"
+#import "Helpers.h"
 
 #endif /* PrefixHeader_pch */

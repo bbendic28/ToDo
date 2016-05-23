@@ -337,8 +337,12 @@
                     <navigationItem key="navigationItem" id="ZPz-OG-VSj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="badgeImageView" destination="SdY-fK-a4l" id="OLv-RK-ngX"/>
+                        <outlet property="badgeLabel" destination="XP6-AZ-xt8" id="BtY-Z0-EZQ"/>
                         <outlet property="menuView" destination="Tbi-No-NuS" id="tjT-Hx-Uwa"/>
                         <outlet property="profileImageView" destination="QOr-vH-w5Q" id="lIE-Pf-yLn"/>
+                        <outlet property="tableView" destination="Kc9-dj-9Ox" id="Ls1-f7-rIQ"/>
+                        <outlet property="welcomeLabel" destination="7b2-7P-BPh" id="1Qy-9c-Hyo"/>
                         <segue destination="35R-4Z-IIH" kind="push" identifier="WalkThroughSegue" id="3hw-3c-RRj"/>
                         <segue destination="jMY-W7-gxg" kind="push" identifier="StatisticsSegue" id="9za-dR-xSQ"/>
                         <segue destination="Ocr-Kj-Vfz" kind="modal" identifier="AboutSegue" id="rQc-ut-JLG"/>

@@ -59,6 +59,48 @@
     }];
 }
 
+#pragma mark - View lifecycle
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+-(void)viewDidLoad{
+    [self configureTextFieldPlaceholders];
+    [self registerForNotifications];
+    [self configureMap];
+    
+    self.addButton.alpha=ZERO_VALUE;
+    
+    if (self.task) {
+        [self fillData];
+    }
+    else{
+        self.group=NOT_COMPLETED_TASK_GROUP;
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.addButton.alpha=1.0;
+    }];
+}
+
+#pragma mark - UITextFieldDelegate
+
+//pritiskom na return na tastaturi,da tastatura nestane
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+
+
+
+
 #pragma mark - Actions
 
 - (IBAction)backButtonTapped:(id)sender {
@@ -113,10 +155,25 @@
 
 -(void)configureAlert{
     
+    UIAlertController *alertController= [UIAlertController alertControllerWithTitle:@"Save Task" message:@"Are you sure you want to go back without saving?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *yesAction=[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        [self.navigationController popViewControllerAnimated:YES];}
+                              ];
+    
+    UIAlertAction *noAction=[UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:NULL];
+    
+    [alertController addAction:yesAction];
+    [alertController addAction:noAction];
+    
+    [self presentViewController:alertController animated:YES completion:NULL];
 }
 
 -(BOOL)isEdited{
-    return YES;
+    if (self.titleTextField.text.length>0) {
+        return YES;
+    }
+    return NO;
 }
 
 -(void)saveTask{
@@ -149,8 +206,53 @@
     }
 
 
--(void)viewDidLoad{
-    [self configureTextFieldPlaceholders];
+
+-(void)registerForNotifications{
+    [[NSNotificationCenter defaultCenter] addObserverForName:CITY_CHANGED
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification * _Nonnull note) {
+        self.cityLabel.text=[DataManager sharedInstance].userLocality;
+                                                    }
+     ];
+}
+
+-(void)configureMap{
+    
+    self.mapView.alpha=ZERO_VALUE;
+    
+    CLLocationCoordinate2D coordinate;
+    
+    if (self.task) {
+        //na mapu dodajem ciodu
+        [self.mapView addAnnotation:self.task];
+        
+        coordinate=self.task.coordinate;
+    }
+    else {
+        self.mapView.showsUserLocation=YES;
+        coordinate=[DataManager sharedInstance].userLocation.coordinate;
+    }
+    
+    [self zoomMapToCoordinate:coordinate];
+    
+    if ([DataManager sharedInstance].userLocality.length>0) {
+        self.cityLabel.text=[DataManager sharedInstance].userLocality;
+    }
+}
+
+-(void)zoomMapToCoordinate:(CLLocationCoordinate2D)coordinate{
+    MKCoordinateRegion region=MKCoordinateRegionMakeWithDistance(coordinate, kRegionRadius*2.0, kRegionRadius*2.0);
+    
+    MKCoordinateRegion coordinateRegion=[self.mapView regionThatFits:region];
+    [self.mapView setRegion:coordinateRegion animated:YES];
+}
+
+-(void)fillData{
+    self.titleTextField.text=self.task.heading;
+    self.descriptionTextField.text=self.task.desc;
+    self.group=[self.task.group integerValue];
+    [self.mapView addAnnotation:self.task];
 }
 
 @end

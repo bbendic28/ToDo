@@ -10,28 +10,42 @@
 #import "TaskTableViewCell.h"
 #import "Constants.h"
 #import "MenuView.h"
+#import "Task.h"
+#import "DataManager.h"
+#import "WalkViewController.h"
+#import "WebViewController.h"
+#import "Helpers.h"
+
 
 @interface HomeViewController () <UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak,nonatomic) IBOutlet MenuView *menuView;
+//da bismo dodatno konfigurisali table view moramo ovako hard dodati propertu tableView
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *badgeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *badgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+@property(strong,nonatomic) NSMutableArray *itemsArray;
 
 @end
 
 @implementation HomeViewController
 
-#pragma mark - View lifecyle
+#pragma mark - Properties
 
-- (void)viewDidLoad{
-    [super viewDidLoad];
-    
-    UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                         action:@selector(pickImage)];
-    tap.numberOfTapsRequired=1;
-    
-    [self.profileImageView addGestureRecognizer:tap];
-    
-    self.profileImageView.clipsToBounds=YES;
-    self.profileImageView.layer.cornerRadius=self.profileImageView.frame.size.width/2;
+-(NSMutableArray *)itemsArray{
+    return [[DataManager sharedInstance] fetchEntity:NSStringFromClass([Task class]) withFilter:nil withSortAsc:YES forKey:@"date"];
+}
+
+#pragma mark - Private API
+
+-(void)configureBadge{
+    self.badgeImageView.alpha=(self.itemsArray.count == 0) ? ZERO_VALUE : 1.0;
+    self.badgeLabel.alpha=(self.itemsArray.count==0) ? ZERO_VALUE : 1.0;
+    self.badgeLabel.text=[NSString stringWithFormat:@"%ld", self.itemsArray.count];
+}
+
+-(void)configureProfileImage{
     
     
     //set profile image if nsdata exists in nsuserdefaults
@@ -42,22 +56,48 @@
         
         self.profileImageView.image=[[UIImage alloc] initWithData:data];
     }
+
     
     
     /*dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"StatisticsSegue" sender:self];
-        [self presentErrorWithTitle:@"BORKO" andError:@"BORKO"];
-    });
-    
-   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"AboutSegue" sender:self];
-    });*/
+     [self performSegueWithIdentifier:@"StatisticsSegue" sender:self];
+     [self presentErrorWithTitle:@"BORKO" andError:@"BORKO"];
+     });
+     
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+     [self performSegueWithIdentifier:@"AboutSegue" sender:self];
+     });*/
     
     /*dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:self];
-    });*/
+     [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:self];
+     });*/
     
     self.menuView.delegate=self;
+}
+
+-(void)configureWelcomeLabel{
+    if ([Helpers isMorning]) {
+        self.welcomeLabel.text=@"Good Morning!";
+    }
+    else{
+        self.welcomeLabel.text=@"Good afternoon!";
+    }
+}
+
+#pragma mark - View lifecyle
+
+- (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    
+    [self configureProfileImage];
+    
+    UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                         action:@selector(pickImage)];
+    tap.numberOfTapsRequired=1;
+    
+    [self.profileImageView addGestureRecognizer:tap];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -76,7 +116,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.itemsArray.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

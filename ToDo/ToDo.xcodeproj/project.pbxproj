@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6074F8C1CCA52600046EC2C /* WalkViewController.m */; };
+		D61896C71CF33D2600B54862 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D61896C61CF33D2600B54862 /* Helpers.m */; };
 		D62529AD1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62529AC1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m */; };
 		D62529B01CCE438900678CC9 /* WalkThroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D62529AF1CCE438900678CC9 /* WalkThroughItem.m */; };
 		D62932DA1CEC87FD0063C669 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62932D91CEC87FD0063C669 /* MenuView.m */; };
@@ -89,6 +90,8 @@
 /* Begin PBXFileReference section */
 		D6074F8B1CCA52600046EC2C /* WalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkViewController.h; sourceTree = "<group>"; };
 		D6074F8C1CCA52600046EC2C /* WalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkViewController.m; sourceTree = "<group>"; };
+		D61896C51CF33D2600B54862 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		D61896C61CF33D2600B54862 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		D62529AB1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkThroughCollectionViewCell.h; sourceTree = "<group>"; };
 		D62529AC1CCE3D9200678CC9 /* WalkThroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkThroughCollectionViewCell.m; sourceTree = "<group>"; };
 		D62529AE1CCE438900678CC9 /* WalkThroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkThroughItem.h; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				D67ABE671CEF2B5A002A7941 /* TaskDetailsViewController.m */,
 				D67ABE691CEF3F34002A7941 /* UIViewController+Utilities.h */,
 				D67ABE6A1CEF3F34002A7941 /* UIViewController+Utilities.m */,
+				D61896C51CF33D2600B54862 /* Helpers.h */,
+				D61896C61CF33D2600B54862 /* Helpers.m */,
 				D63AF2221CC1184200E23A0A /* Constants.h */,
 			);
 			name = Controllers;
@@ -486,6 +491,7 @@
 				D689E0E41CDA1EF30032CFDB /* StatisticsViewController.m in Sources */,
 				D62932DA1CEC87FD0063C669 /* MenuView.m in Sources */,
 				D650E73B1CAC06110026D3EF /* LogInViewController.m in Sources */,
+				D61896C71CF33D2600B54862 /* Helpers.m in Sources */,
 				D6074F8D1CCA52600046EC2C /* WalkViewController.m in Sources */,
 				D67ABE6B1CEF3F34002A7941 /* UIViewController+Utilities.m in Sources */,
 				D67ABE681CEF2B5A002A7941 /* TaskDetailsViewController.m in Sources */,
