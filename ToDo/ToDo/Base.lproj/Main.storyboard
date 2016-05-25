@@ -56,7 +56,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DMz-2j-Rob"/>
+                                    <action selector="submitButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="9eY-BW-N9t"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="D67-KL-XNc">
@@ -109,17 +109,19 @@
                     <connections>
                         <outlet property="activityIndicatorView" destination="Y9H-5f-4GY" id="9R9-Fl-eLI"/>
                         <outlet property="footerViewFrame" destination="D67-KL-XNc" id="3Mf-SU-U1Y"/>
+                        <outlet property="logoView" destination="5je-N9-T8w" id="wVQ-kM-lE9"/>
                         <outlet property="maskLogoView" destination="5je-N9-T8w" id="sIt-jV-We8"/>
                         <outlet property="passwordImageView" destination="hEh-hX-RRn" id="X9I-UD-OTJ"/>
                         <outlet property="passwordTextField" destination="wzH-OA-fMp" id="uEh-8x-TbS"/>
                         <outlet property="submitButton" destination="T6G-Kh-HDt" id="Qdo-QT-Sxk"/>
+                        <outlet property="usernameImageView" destination="gWm-hc-EXx" id="0BQ-i4-HK0"/>
                         <outlet property="usernameTextField" destination="XH9-du-WN5" id="vPJ-sh-Tfj"/>
                         <segue destination="c7U-8u-cZt" kind="push" identifier="HomeSegue" id="MW2-Ig-r3x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447.5" y="387.5"/>
+            <point key="canvasLocation" x="450.5" y="386.5"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="OXw-SK-X9n">
@@ -351,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dei-pS-LfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930.5" y="1002.5"/>
+            <point key="canvasLocation" x="940.5" y="871.5"/>
         </scene>
         <!--Walk View Controller-->
         <scene sceneID="qHe-vT-IBx">
@@ -434,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDV-s8-ygI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522.5" y="909.5"/>
+            <point key="canvasLocation" x="1524.5" y="871.5"/>
         </scene>
         <!--Task Details View Controller-->
         <scene sceneID="Dp4-79-Otg">
@@ -584,7 +586,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSe-op-F0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246.5" y="1267.5"/>
+            <point key="canvasLocation" x="368.5" y="1716.5"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="7DQ-Um-WDb">
@@ -621,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUz-SZ-iUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737.5" y="1846.5"/>
+            <point key="canvasLocation" x="940.5" y="1788.5"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="Otn-FJ-h7s">
@@ -790,7 +792,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtI-NS-uqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442.5" y="1854.5"/>
+            <point key="canvasLocation" x="1492.5" y="1716.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7WD-j8-fk9">

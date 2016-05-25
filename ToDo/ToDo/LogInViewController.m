@@ -11,39 +11,39 @@
 #define kConstant 50.0
 #define ZERO_VALUE 0.0
 
-@interface LogInViewController() <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIView *logoView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UIView *footerViewFrame;
-@end
-
 @implementation LogInViewController
 
 #pragma mark - Private API
-
-- (IBAction)signInButtonTapped:(UIButton *)sender {
-    
-    [self.activityIndicatorView startAnimating];
-    
-    sender.enabled=NO;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
-    });
-}
 
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
 }
 
 - (IBAction)forgotPassworButtonTapped:(UIButton *)sender {
+    NSLog(@"Forgot password....");
+}
+
+- (IBAction)submitButtonTapped {
+    if (self.usernameTextField.text.length == 0) {
+        [self presentErrorWithTitle:@"Validation" andError:@"Please enter your username."];
+        return;
+    }
+    
+    if (self.passwordTextField.text.length == 0) {
+        [self presentErrorWithTitle:@"Validation" andError:@"Please enter your password."];
+        return;
+    }
+    
+    NSLog(@"Signing in...");
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LOGGED_IN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.activityIndicatorView startAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.activityIndicatorView stopAnimating];
+        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
+    });
+    
 }
 
 - (void)configureTextField:(UITextField *)textField {
@@ -63,6 +63,21 @@
     }
 }
 
+
+-(void)configureTextFieldPlaceholders {
+    NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
+    [attributes setObject:[UIFont fontWithName:@"Avenir-Book" size:15.0] forKey:NSFontAttributeName];
+    [attributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    
+    NSAttributedString *usernamePlaceholder = [[NSAttributedString alloc] initWithString:self.usernameTextField.placeholder
+                                                                              attributes:attributes];
+    self.usernameTextField.attributedPlaceholder = usernamePlaceholder;
+    
+    NSAttributedString *passwordPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder
+                                                                              attributes:attributes];
+    self.passwordTextField.attributedPlaceholder = passwordPlaceholder;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
@@ -70,6 +85,8 @@
     
     [self configureTextField:self.usernameTextField];
     [self configureTextField:self.passwordTextField];
+    
+    [self configureTextFieldPlaceholders];
     
     //[self.activityIndicatorView stopAnimating];
 }

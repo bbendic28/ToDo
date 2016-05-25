@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "TaskTableViewCell.h"
+#import "TaskDetailsViewController.h"
 #import "Constants.h"
 #import "MenuView.h"
 #import "Task.h"
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *badgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property(strong,nonatomic) NSMutableArray *itemsArray;
+@property(strong,nonatomic) Task *selectedTask;
 
 @end
 
@@ -90,7 +92,9 @@
     
     [super viewDidLoad];
     
+    
     [self configureProfileImage];
+    [self configureWelcomeLabel];
     
     UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                          action:@selector(pickImage)];
@@ -98,14 +102,44 @@
     
     [self.profileImageView addGestureRecognizer:tap];
     
+    self.menuView.delegate=self;
+    
+    self.tableView.tableFooterView=[[UIView alloc] init];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    /*if (![[NSUserDefaults standardUserDefaults] boolForKey:WALK_THROUGH_PRESENTED]) {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:WALK_THROUGH_PRESENTED]) {
         [self performSegueWithIdentifier:@"WalkThroughSegue" sender:nil];
-    }*/
+    }
+}
+
+/*-(UIStatusBar)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}*/
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+    [self configureBadge];
+}
+
+#pragma mark - Segue Management
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"AboutSegue"]) {
+        WebViewController *webViewcontroller=(WebViewController *)segue.destinationViewController;
+        webViewcontroller.urlString=CUBES_URL;
+    }
+    
+    if ([segue.identifier isEqualToString:@"TaskDetailsViewController"]) {
+        TaskDetailsViewController *taskDetailsViewcontroller=(TaskDetailsViewController *)segue.destinationViewController;
+        taskDetailsViewcontroller.task=self.selectedTask;
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -122,27 +156,31 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     TaskTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.taskTitleLabel.text=[NSString stringWithFormat:@"Red %ld",indexPath.row];
     
-    switch (indexPath.row) {
-            
-        case COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor=kTurquoiseColor;
-            break;
-            
-        case IN_PROGRESS_TASK_GROUP:
-            cell.taskGroupView.backgroundColor=kPurpleColor;
-            break;
-            
-        default:
-            cell.taskGroupView.backgroundColor=kOrangeColor;
-            break;
-    }
+    //Task *task=[self.itemsArray objectAtIndex:indexPath.row];
+    //cell.task=task;
+    
+    cell.task=self.itemsArray[indexPath.row];
     
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    if (editingStyle==UITableViewCellEditingStyleDelete) {
+        Task *task=[self.itemsArray objectAtIndex:indexPath.row];
+        [[DataManager sharedInstance] deleteObjectInDatabase:task];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView reloadData];
+        
+        //da postavi broj zadataka na badge-u refreshovan
+        [self configureBadge];
+    }
+}
 
 
 #pragma mark - UITableViewDataDelegate
@@ -208,6 +246,14 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Task *task=[self.itemsArray objectAtIndex:indexPath.row];
+    self.selectedTask=task;
+    [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+}
+
 
 
 
@@ -243,6 +289,7 @@
 - (void)menuViewOptionTapped:(MenuOption)option{
     switch (option) {
         case TASK_DETAILS_MENU_OPTION:{
+            self.selectedTask=nil;
             [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
         }break;
         
