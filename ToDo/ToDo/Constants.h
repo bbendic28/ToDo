@@ -40,6 +40,10 @@ static NSString *const OK_STRING = @"OK";
 
 static NSString *const EMPTY_STRING = @"";
 
+static NSString *const SHOW_HOME = @"SHOW_HOME";
+
+static NSString *const SHOW_LOGIN = @"SHOW_LOGIN";
+
 //URLs
 static NSString *const CUBES_URL = @"http://www.cubes.rs";
 
